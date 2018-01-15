@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,11 +18,20 @@
             <nav>
             <div class="nav-wrapper #b71c1c red darken-4">
                 {% if app.user %}
-                    <a href="{{ path('articles') }}" class="brand-logo center">Mon Blog</a>
+                    {% if app.user.hasRole('ROLE_USER')  %}
+                    <a href="{{ path('articles') }}" class="brand-logo center">Bienvenue sur mon Blog</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li class="left-align">Hello {{ app.user }}</li>
                         <li><a href="{{ path('article') }}">Crée un article</a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
+                    </ul>
+                    {% elseif app.user.hasRole('ROLE_ADMIN')  %}
+
+                            <li class="left-align">Hello administrateur {{ app.user }}</li>
+                            <li><a href="{{ path('article') }}">Crée un article</a></li>
+                            <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
+                    {% endif %}
+
 
                 {% else %}
                     <a href="{{ path('articles') }}" class="brand-logo center">Mon Blog</a>
@@ -31,7 +41,7 @@
                     </ul>
                 {% endif %}
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            <li><a href="{{ path('article') }}">Mon CV</a></li>
+                            <li><a href="{{ path('moncv') }}">Mon CV</a></li>
                         </ul>
 
             </div>

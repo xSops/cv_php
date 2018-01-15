@@ -36,6 +36,7 @@ class ArticleController extends Controller
             $article->setContenu($data['contenu']);
             $article->setCollection($data['collection']);
             $article->setTitle($data['title']);
+            $article->setUser($this->getUser()->getId());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($article);
@@ -46,6 +47,7 @@ class ArticleController extends Controller
         // replace this example code with whatever you need
         return $this->render('article/add.html.twig', ['form' => $form->createView()]);
     }
+
 
 
     /**
@@ -80,7 +82,7 @@ class ArticleController extends Controller
      */
     public function removeArticle (Request $request, $id)
     {
-       $this->denyAccessUnlessGranted(ROLE_ADMIN);
+       $this->denyAccessUnlessGranted('ROLE_ADMIN');
 
         $doctrine = $this->getDoctrine();
         $em = $doctrine->getManager();
@@ -92,5 +94,13 @@ class ArticleController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('articles');
+    }
+
+    /**
+     * @Route("/moncv", name="moncv")
+     */
+    public function showCV ()
+    {
+        return $this->render('cv/cv.html.twig');
     }
 }
