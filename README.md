@@ -1,6 +1,6 @@
 Liste des différents points à vérifier afin de noter ce projet convenablement :
 
-•	Crée un nouveau dossier puis ouvrir un invité de commande dans ce dernier
+•	Créez un nouveau dossier puis ouvrir un invité de commande dans ce dernier
 
 •	Utiliser la commande "git clone https://github.com/Rraph/BlogBEGHIN"
 
@@ -10,7 +10,7 @@ Liste des différents points à vérifier afin de noter ce projet convenablement
 
 •	Créez une nouvelle base de donnée dans phpmyadmin du nom de " bddcv " 
 
-•	importer ensuite le fichier bddcv.sql présent dans le projet dans votre BDD.
+•	importez ensuite le fichier bddcv.sql présent dans le projet dans votre BDD.
 
 •	identifiants admin | Username : test | Password : test, je vous invite à vous enregistrer si vous souhaitez tester le site en tant 
 qu'user simple
