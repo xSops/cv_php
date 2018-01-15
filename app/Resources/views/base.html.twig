@@ -1,0 +1,50 @@
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+        {% block body %}
+            <nav>
+            <div class="nav-wrapper #b71c1c red darken-4">
+                {% if app.user %}
+                    <a href="{{ path('articles') }}" class="brand-logo center">Mon Blog</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li class="left-align">Hello {{ app.user }}</li>
+                        <li><a href="{{ path('article') }}">Crée un article</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}">Deconnexion</a></li>
+
+                {% else %}
+                    <a href="{{ path('articles') }}" class="brand-logo center">Mon Blog</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+                        <li><a href="{{ path('fos_user_registration_register') }}">Inscription</a></li>
+                    </ul>
+                {% endif %}
+                        <ul id="nav-mobile" class="left hide-on-med-and-down">
+                            <li><a href="{{ path('article') }}">Mon CV</a></li>
+                        </ul>
+
+            </div>
+
+            </nav>
+        {% endblock %}
+
+        {% block main %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+
+
+    </body>
+</html>

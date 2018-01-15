@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{%  block main %}
+    <div style="display:flex;justify-content:center;align-items:center;">
+        <div>
+            Filtrer par :
+            {% for article in collections %}
+                <a href="" class="waves-effect waves-light btn ">{{ article.collection }}</a>
+            {% endfor  %}
+        </div>
+    </div>
+
+
+
+
+    {#<div class="container">#}
+        {#<br/>#}
+        {#{% for article in articles %}#}
+            {#{{ article.title }} | <a href="{{ path('unArticle', {id: article.id})  }}">Regardez cet article </a>#}
+            {#</br>#}
+        {#{% endfor %}#}
+    {#</div>#}
+    {% for article in articles %}
+     <div class="container" style="display:flex;justify-content:center;align-items:center;">
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card #eeeeee grey lighten-3">
+                    <div class="card-content #bdbdbd grey lighten-1" style="display:flex;justify-content:center;align-items:center;">
+                        <span class="card-title">{{ article.title }}</span>
+
+
+                    </div>
+                    <div class="card-action #bdbdbd grey lighten-1">
+                        <a href="{{ path('unArticle', {id: article.id})  }}">Regardez cet article </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+         {% endfor %}
+{%  endblock %}
