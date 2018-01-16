@@ -2,7 +2,7 @@ Liste des différents points à vérifier afin de noter ce projet convenablement
 
 •	Créez un nouveau dossier puis ouvrir un invité de commande dans ce dernier
 
-•	Utiliser la commande "git clone https://github.com/Rraph/BlogBEGHIN"
+•	Utiliser la commande "git clone https://github.com/xSops/cv_php"
 
 •	Utiliser la commande "composer install" ainsi que "composer update" afin de bien mettre en place le projet
 
