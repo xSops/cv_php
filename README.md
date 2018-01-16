@@ -10,7 +10,7 @@ Liste des différents points à vérifier afin de noter ce projet convenablement
 
 •	Créez une nouvelle base de donnée dans phpmyadmin du nom de " bddcv " 
 
-•	importez ensuite le fichier bddcv.sql présent dans le projet dans votre BDD.
+•	importez ensuite le fichier bddcv.sql présent dans votre BDD du projet.
 
 •	identifiants admin | Username : test | Password : test, je vous invite à vous enregistrer si vous souhaitez tester le site en tant 
 qu'user simple
